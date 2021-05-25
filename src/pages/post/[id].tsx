@@ -63,12 +63,13 @@ const Index = ({
 		}
 	}, [filter]);
 
-	const loadMoreComments = () =>
+	const loadMoreComments = () => {
 		setFilter({
 			...filter,
 			page: filter.page + 1,
 			isReady: true,
 		});
+	};
 
 	return (
 		<>
