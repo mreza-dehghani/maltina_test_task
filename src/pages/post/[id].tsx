@@ -63,6 +63,13 @@ const Index = ({
 		}
 	}, [filter]);
 
+	const loadMoreComments = () =>
+		setFilter({
+			...filter,
+			page: filter.page + 1,
+			isReady: true,
+		});
+
 	return (
 		<>
 			<Head>
@@ -93,13 +100,7 @@ const Index = ({
 						<Button
 							size="lg"
 							type="success"
-							onClick={() =>
-								setFilter({
-									...filter,
-									page: filter.page + 1,
-									isReady: true,
-								})
-							}
+							onClick={loadMoreComments}
 							loading={getCommentsLoading}
 						>
 							More Comment

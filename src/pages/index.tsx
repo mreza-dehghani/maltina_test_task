@@ -45,6 +45,13 @@ const Index = ({ loading, posts, getPosts, clearData }: IProps) => {
 		}
 	}, [filter]);
 
+	const loadMoreData = () =>
+		setFilter({
+			...filter,
+			page: filter.page + 1,
+			isReady: true,
+		});
+
 	return (
 		<>
 			<Head>
@@ -64,18 +71,7 @@ const Index = ({ loading, posts, getPosts, clearData }: IProps) => {
 							return <Card imgPath={Img} description={item.body} id={item.id} key={key} />;
 						})}
 				</CardContainer>
-				<Button
-					size="lg"
-					type="success"
-					onClick={() =>
-						setFilter({
-							...filter,
-							page: filter.page + 1,
-							isReady: true,
-						})
-					}
-					loading={loading}
-				>
+				<Button size="lg" type="success" onClick={loadMoreData} loading={loading}>
 					More Post
 				</Button>
 			</div>
