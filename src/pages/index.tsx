@@ -58,7 +58,7 @@ const Index = ({ loading, posts, getPosts, clearData }: IProps) => {
 		<>
 			<Head>
 				<title>Maltina - Posts</title>
-				{/*<link rel="icon" href="/favicon.ico" />*/}
+				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<div>
 				<Alert
