@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
+import { GetServerSideProps } from 'next';
 import { connect } from 'react-redux';
 import MainLayout from '../layouts/main';
 import { initializeStore } from '../store';
@@ -45,18 +46,19 @@ const Index = ({ loading, posts, getPosts, clearData }: IProps) => {
 		}
 	}, [filter]);
 
-	const loadMoreData = () =>
+	const loadMoreData = () => {
 		setFilter({
 			...filter,
 			page: filter.page + 1,
 			isReady: true,
 		});
+	};
 
 	return (
 		<>
 			<Head>
 				<title>Maltina - Posts</title>
-				<link rel="icon" href="/favicon.ico" />
+				{/*<link rel="icon" href="/favicon.ico" />*/}
 			</Head>
 			<div>
 				<Alert
@@ -79,7 +81,7 @@ const Index = ({ loading, posts, getPosts, clearData }: IProps) => {
 	);
 };
 
-export const getServerSideProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
 	const reduxStore = initializeStore();
 	const { dispatch } = reduxStore;
 	const postData: PostParamsModel = {
