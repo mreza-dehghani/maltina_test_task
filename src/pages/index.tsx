@@ -60,7 +60,7 @@ const Index = ({ loading, posts, getPosts, clearData }: IProps) => {
 				<CardContainer>
 					{posts &&
 						posts.length !== 0 &&
-						posts.map((item: any, key: number) => {
+						posts.map((item: PostModel, key: number) => {
 							return <Card imgPath={Img} description={item.body} id={item.id} key={key} />;
 						})}
 				</CardContainer>

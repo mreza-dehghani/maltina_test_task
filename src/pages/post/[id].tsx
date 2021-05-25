@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import MainLayout from '../../layouts/main';
 import { initializeStore } from '../../store';
 import { CommentAction, PostAction } from '../../actions';
-import { Wrapper } from '../../styles/pages/postDetailsStyle';
 import ProductDetail from '../../components/productDetail';
 import ProductComment from '../../components/productComment';
 import img from '../../assets/img/png/default_avatar.jpg';

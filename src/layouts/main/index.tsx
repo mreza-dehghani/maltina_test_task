@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import ToastComponent from '../../components/toast';
 import { Wrapper } from './style';
 
@@ -16,12 +15,4 @@ const MainLayout = ({ children }: IProps) => {
 	);
 };
 
-const mapStateToProps = (store: any) => {
-	return {};
-};
-
-const mapDispatchToProps = (dispatch: any) => {
-	return {};
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(MainLayout);
+export default MainLayout;

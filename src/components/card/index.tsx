@@ -4,8 +4,8 @@ import { Card, CardHeader, CardBody } from './style';
 
 interface IProps {
 	imgPath: string;
-	description: string;
-	id: number;
+	description?: string;
+	id?: number;
 }
 
 const Index = ({ imgPath, description, id }: IProps) => {
